@@ -1,0 +1,28 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["omitApi"]
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id       String @id @default(auto()) @map("_id")  @db.ObjectId
+  username String @unique
+  password String
+  forms    Form[] @relation(fields: [formsId], references: [id])
+  formsId  String[] @db.ObjectId
+  authoredForms Form[]  @relation("Author")
+}
+
+model Form {
+  id     String @id @default(auto()) @map("_id")  @db.ObjectId
+  title  String
+  authorId  String
+  fields Json
+  users  User[] @relation(fields: [usersId], references: [id])
+  usersId String[] @db.ObjectId
+  author User   @relation("Author", fields: [authorId], references: [id])
+}
