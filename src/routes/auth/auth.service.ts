@@ -25,7 +25,6 @@ export const getUser = async (req: Request, res: Response): Promise<void> => {
 
 export const createUser = async (req: Request, res: Response): Promise<void> => {
     try {
-        console.log("asdasd")
         const input: RegisterInput = {
             username: req.body.username?.trim(),
             password: req.body.password?.trim()
