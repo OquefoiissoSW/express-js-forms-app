@@ -15,6 +15,9 @@ COPY . .
 
 # открываем порт 3000
 EXPOSE 3000
+EXPOSE 27017
+
+RUN npx prisma generate
 
 # запускаем сервер Express.js
 CMD ["npm", "run", "start"]
