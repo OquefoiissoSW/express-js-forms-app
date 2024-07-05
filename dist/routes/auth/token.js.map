@@ -1,0 +1,1 @@
+{"version":3,"file":"token.js","sourceRoot":"","sources":["../../../src/routes/auth/token.ts"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;AAAA,kDAAmC;AAEnC,MAAM,SAAS,GAAG,OAAO,CAAC,GAAG,CAAC,UAAU,CAAC;AAEzC,MAAM,aAAa,GAAG,CAAC,EAAU,EAAE,EAAE,CACjC,GAAG,CAAC,IAAI,CAAC,EAAE,IAAI,EAAE,EAAE,EAAE,EAAE,EAAC,EAAE,SAAmB,EAAE,EAAE,SAAS,EAAE,KAAK,EAAE,CAAC,CAAC;AAEzE,kBAAe,aAAa,CAAA"}
