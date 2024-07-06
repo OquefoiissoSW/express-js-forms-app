@@ -3,6 +3,7 @@ import routes from './routes/routes'
 import bodyParser from 'body-parser';
 import swaggerDocs from "./utils/swagger";
 import * as dotenv from 'dotenv'
+import { PrismaClient } from "@prisma/client";
 
 const app = express();
 
@@ -17,7 +18,18 @@ app.get('/api', (request: express.Request, response: express.Response) => {
     response.send('qwertt');
 })
 
-app.listen(PORT, () => {
+const prisma = new PrismaClient()
+
+
+app.listen(PORT, async () => {
+    await prisma.user.findUnique({
+        where: {
+            username: "testuser",
+        },
+        select: {
+            id: true,
+        }
+    })
     console.log('Running on Port', PORT);
     swaggerDocs(app, PORT)
 })

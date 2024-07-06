@@ -15,7 +15,6 @@ COPY . .
 
 # открываем порт 3000
 EXPOSE 3000
-EXPOSE 27017
 
 RUN npx prisma generate
 
