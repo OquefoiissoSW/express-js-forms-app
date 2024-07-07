@@ -17,6 +17,7 @@ COPY . .
 EXPOSE 3000
 
 RUN npx prisma generate
+RUN npx prisma db push
 
 # запускаем сервер Express.js
 CMD ["npm", "run", "start"]
