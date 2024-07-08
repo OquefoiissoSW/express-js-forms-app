@@ -22,14 +22,6 @@ const prisma = new PrismaClient()
 
 
 app.listen(PORT, async () => {
-    await prisma.user.findUnique({
-        where: {
-            username: "testuser",
-        },
-        select: {
-            id: true,
-        }
-    })
     console.log('Running on Port', PORT);
     swaggerDocs(app, PORT)
 })
